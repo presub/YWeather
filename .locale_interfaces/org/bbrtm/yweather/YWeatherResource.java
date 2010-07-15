@@ -1,0 +1,52 @@
+package org.bbrtm.yweather;
+
+public interface YWeatherResource {
+    // Hash of: "org.bbrtm.yweather.YWeather".
+    long BUNDLE_ID = 0xcca795dc0ef9a335L;
+    String BUNDLE_NAME = "org.bbrtm.yweather.YWeather";
+
+    int DIALOG_SEARCH_FAILED = 10;
+    int DIALOG_RENAME_SAVE_BUTTON_LABEL = 32;
+    int SEARCH_LOAD_MORE_BUTTON = 16;
+    int LOCATIONS_EMPTY = 29;
+    int OPTIONS_TITLE = 24;
+    int MENU_ITEM_MOVE_UP = 4;
+    int MENU_ITEM_SET_HOMESCREEN = 19;
+    int MENU_ITEM_NEW_SEARCH = 15;
+    int STATUS_CHECKING_UPDATES = 35;
+    int ABOUT_TEXT = 37;
+    int ABOUT_CURRENT_VERSION = 39;
+    int MENU_ITEM_REFRESH = 27;
+    int ABOUT_TITLE = 36;
+    int APP_DESCRIPTION = 12;
+    int MENU_ITEM_REFRESH_ALL = 28;
+    int MENU_ITEM_EXIT = 14;
+    int OPTIONS_LABEL_NETWORK = 25;
+    int SEARCH_TITLE = 8;
+    int MENU_ITEM_ABOUT = 38;
+    int MENU_ITEM_FORECAST = 6;
+    int SEARCH_EMPTY_STRING = 13;
+    int WEATHER_UPDATING = 43;
+    int OPTIONS_LABEL_BACKGROUND_UPDATES = 20;
+    int OPTIONS_LABEL_CELSIUS = 23;
+    int DIALOG_RENAME_PROMPT = 31;
+    int MENU_ITEM_TOGGLE_DETAILS = 42;
+    int LOCATIONS_TITLE = 7;
+    int OPTIONS_LABEL_FAHRENHEIT = 22;
+    int STATUS_UPDATE_AVAILABLE = 34;
+    int STATUS_NO_UPDATES = 33;
+    int DIALOG_ADD_LOCATION_PROMPT = 1;
+    int DIALOG_SEARCHING = 9;
+    int DIALOG_REMOVE_LOCATION = 18;
+    int MENU_ITEM_ADD_LOCATION = 3;
+    int MENU_ITEM_OPTIONS = 26;
+    int MENU_ITEM_REMOVE_LOCATION = 17;
+    int MENU_ITEM_RENAME = 30;
+    int MENU_ITEM_CHECK_UPDATES = 40;
+    int APP_TITLE = 11;
+    int DIALOG_ADD_LOCATION_SEARCH_BUTTON_LABEL = 2;
+    int APP_ID = 0;
+    int MENU_ITEM_FEEDBACK = 41;
+    int MENU_ITEM_MOVE_DOWN = 5;
+    int OPTIONS_LABEL_UDPATE_INTERVAL = 21;
+}
