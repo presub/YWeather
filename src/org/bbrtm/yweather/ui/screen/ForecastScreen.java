@@ -1,5 +1,6 @@
 package org.bbrtm.yweather.ui.screen;
 
+import net.rim.blackberry.api.browser.Browser;
 import net.rim.device.api.i18n.DateFormat;
 import net.rim.device.api.system.Bitmap;
 import net.rim.device.api.ui.DrawStyle;
@@ -65,11 +66,13 @@ public class ForecastScreen extends BaseScreen
     private LabelField                 forecast2Temp      = null;
     
     private MenuItem                   toggleMenuItem     = null;
+    private MenuItem                   viewMenuItem       = null;
     private boolean                    showDetails        = true;
     
     public ForecastScreen(ForecastController controller)
     {
         super(VERTICAL_SCROLL);
+        this.controller = controller;
         GoogleAnalyticsTracker.getInstance().trackPageView("/forecast");
         showDetails = config.showDetails();
         Place place = controller.getPlace();
@@ -177,7 +180,7 @@ public class ForecastScreen extends BaseScreen
         
         add(new NullField(FOCUSABLE));
         
-        toggleMenuItem = new MenuItem(resource.getString(YWeatherResource.MENU_ITEM_TOGGLE_DETAILS), 400000, 100)
+        toggleMenuItem = new MenuItem(resource.getString(YWeatherResource.MENU_ITEM_TOGGLE_DETAILS), 490000, 100)
         {
             public void run()
             {
@@ -185,8 +188,32 @@ public class ForecastScreen extends BaseScreen
             }
         };
         addMenuItem(toggleMenuItem);
+        
+        viewMenuItem = new MenuItem(resource.getString(YWeatherResource.MENU_ITEM_VIEW_YAHOO_FORECAST), 450000, 1000)
+        {
+            public void run()
+            {
+                openYahooWeather();
+            }
+        };
+        addMenuItem(viewMenuItem);
     }
     
+    public ForecastController getController()
+    {
+        return controller;
+    }
+    
+    protected void openYahooWeather()
+    {       
+        try {
+            String link = getController().getPlace().getWeather().getLink();
+            Browser.getDefaultSession().displayPage(link);
+        }catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
     protected boolean keyChar(char c, int status, int time)
     {
         if (c == 't')

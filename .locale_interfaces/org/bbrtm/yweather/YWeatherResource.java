@@ -14,6 +14,7 @@ public interface YWeatherResource {
     int MENU_ITEM_SET_HOMESCREEN = 19;
     int MENU_ITEM_NEW_SEARCH = 15;
     int STATUS_CHECKING_UPDATES = 35;
+    int MENU_ITEM_VIEW_YAHOO_FORECAST = 44;
     int ABOUT_TEXT = 37;
     int ABOUT_CURRENT_VERSION = 39;
     int MENU_ITEM_REFRESH = 27;

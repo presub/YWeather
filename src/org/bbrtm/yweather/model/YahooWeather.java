@@ -16,6 +16,7 @@ public class YahooWeather implements Persistable
     private String city;
     private String region;
     private String country;
+    private String link;
     
     private String currentCondition;
     private String currentTemp;
@@ -73,6 +74,16 @@ public class YahooWeather implements Persistable
     public void setCountry(String country)
     {
         this.country = country;
+    }
+    
+    public String getLink()
+    {
+        return link;
+    }
+    
+    public void setLink(String link)
+    {
+        this.link = link;
     }
     
     public String getCurrentCondition()

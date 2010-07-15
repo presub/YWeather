@@ -10,6 +10,7 @@ import org.bbrtm.yweather.model.YahooWeather;
 import org.bbrtm.yweather.model.YahooWeatherForecast;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 
@@ -39,6 +40,20 @@ public class YahooWeatherAPI
                     return weather;
                 }
                 
+            }
+            
+            Node itemNode = root.getElementsByTagName("item").item(0);
+            nodes = itemNode.getChildNodes();
+            nodeCount = nodes.getLength();
+            for(int x = 0; x < nodeCount; ++x)
+            {
+                Node node = nodes.item(x);
+                String name = node.getNodeName();
+                if (name.equals("link")) {
+                    String link = getNodeValue((Element) node); 
+                    weather.setLink(link);
+                    break;
+                }
             }
             
             nodes = root.getElementsByTagName("yweather:condition");
