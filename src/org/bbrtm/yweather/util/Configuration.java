@@ -24,6 +24,7 @@ public final class Configuration
     private static Object           placeLock      = new Object();
     
     private static PersistentObject persist;
+    private boolean isRunning = false;
     
     private Configuration()
     {
@@ -151,4 +152,15 @@ public final class Configuration
     {
         configurationHashtable.putBoolean(KEY_DETAILS, details);
     }
+    
+    public boolean getIsRunning()
+    {
+        return isRunning;
+    }
+    
+    public void setIsRunning(boolean run)
+    {
+        isRunning = run;
+    }
+    
 }

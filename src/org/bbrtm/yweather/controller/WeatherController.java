@@ -58,6 +58,12 @@ public class WeatherController extends BaseController
         }
     }
     
+    public boolean isTimerRunning()
+    {
+        
+        if (timer == null) return false; else return true;
+    }
+    
     public void startTimer()
     {
         timer = new Timer();
@@ -69,9 +75,10 @@ public class WeatherController extends BaseController
                 WeatherController.getInstance().updateAll();
             }
         };
-        
+        System.out.println(config.getUpdateInterval());
         int interval = config.getUpdateInterval() * 60000;
         log.debug("starting timer with interval: " + interval);
+        System.out.println("starting timer with interval: " + interval);
         timer.scheduleAtFixedRate(updateTimerTask, interval, interval);
     }
     
@@ -81,6 +88,7 @@ public class WeatherController extends BaseController
         if (timer != null)
         {
             timer.cancel();
+            timer = null;
         }
     }
     
@@ -122,6 +130,7 @@ public class WeatherController extends BaseController
     public void updateWeather(final Place place)
     {
         log.debug("updating weather for " + place.getName());
+        System.out.println("updating weather for " + place.getName());
         if (place.getWeather() != null)
         {
             place.getWeather().setCurrentCondition(resource.getString(YWeatherResource.WEATHER_UPDATING));
@@ -154,7 +163,7 @@ public class WeatherController extends BaseController
                     Configuration.save();
                     synchronized (Application.getEventLock())
                     {
-                        locationController.refreshView();
+                        if (config.getIsRunning()) locationController.refreshView();
                     }
                     if (place.isHomescreen())
                     {

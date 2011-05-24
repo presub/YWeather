@@ -1,5 +1,5 @@
 <Properties ModelVersion="1.1.2">
-  <General Title="YWeather" Version="1.0.11" Vendor="Jason Emerick" Description="A simple weather application"/>
+  <General Title="YWeather" Version="1.0.12" Vendor="Jason Emerick, Jon Cochran" Description="A simple weather application"/>
   <Application Type="BlackBerry Application" MainMIDletName="" MainArgs="" HomeScreenPosition="0" StartupTier="7" IsSystemModule="false" IsAutostartup="true"/>
   <Resources hasTitleResource="true" TitleResourceBundleName="YWeather" TitleResourceBundleRelativePath="src/org/bbrtm/yweather/YWeather.rrh" TitleResourceBundleClassName="org.bbrtm.yweather.YWeather" TitleResourceBundleKey="APP_TITLE" DescriptionId="APP_DESCRIPTION">
     <Icons>
@@ -16,5 +16,12 @@
     <ClassProtection/>
     <PackageProtection/>
   </HiddenProperties>
-  <AlternateEntryPoints/>
+  <AlternateEntryPoints>
+    <AlternateEntryPoint Title="yweather auto" MainMIDletName="" ArgumentsForMain="" HomeScreenPosition="0" StartupTier="7" IsSystemModule="false" IsAutostartup="true" hasTitleResource="false" TitleResourceBundleKey="" TitleResourceBundleName="" TitleResourceBundleClassName="" TitleResourceBundleRelativePath="">
+      <Icons/>
+    </AlternateEntryPoint>
+    <AlternateEntryPoint Title="yweather gui" MainMIDletName="" ArgumentsForMain="gui" HomeScreenPosition="0" StartupTier="7" IsSystemModule="false" IsAutostartup="false" hasTitleResource="false" TitleResourceBundleKey="" TitleResourceBundleName="" TitleResourceBundleClassName="" TitleResourceBundleRelativePath="">
+      <Icons/>
+    </AlternateEntryPoint>
+  </AlternateEntryPoints>
 </Properties>

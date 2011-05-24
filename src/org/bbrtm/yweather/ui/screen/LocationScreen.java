@@ -39,6 +39,8 @@ public class LocationScreen extends BaseScreen
     
     private GoogleAnalyticsTracker tracker                = null;
     
+    private static Configuration     config             = Configuration.getInstance();
+    
     public LocationScreen(LocationController controller)
     {
         super();
@@ -179,10 +181,9 @@ public class LocationScreen extends BaseScreen
     
     public void close()
     {
-        if (Configuration.getInstance().isBackgroundEnabled())
-            UiApplication.getUiApplication().requestBackground();
-        else
-            super.close();
+        config.setIsRunning(false);
+        super.close();
+            
     }
     
     public void setLocations(Place[] places)
